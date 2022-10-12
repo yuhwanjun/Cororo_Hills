@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>cororo hills</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+
+    <style>
+        * {
+            margin: none;
+            padding: none;
+        }
+
+        html,
+        body {
+            background-color: black;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        #div1 {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        #div2 {
+            display: table-cell;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        iframe {
+            border: solid 0px #fff;
+        }
+
+        #textbox {
+            color: #fff;
+            border: solid 2px #8bafd3;
+            background-color: #764a36;
+            position: fixed;
+            width: 1400px;
+            height: 100px;
+            bottom: 10px;
+            text-align: center;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            cursor: url(img/Asset-1.cur), pointer;
+
+            display: none;
+        }
+
+        .textboxchd {
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        /*
+        .tri{
+            position: absolute;
+            width: 30px;
+            z-index: 100;
+            cursor: pointer;
+            right: 20px;
+        }
+*/
+    </style>
+
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div2">
+            <iframe width="1400" height="700" src="files/All/cororohills.html"></iframe>
+        </div>
+    </div>
+
+    <div id="textbox">
+        <p class="textboxchd"></p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+::-webkit-scrollbar{width: 7px;height: 7px;}
+::-webkit-scrollbar-track {background-color:black;}
+::-webkit-scrollbar-thumb {background-color: ghostwhite;border-radius: 0px;}
+::-webkit-scrollbar-thumb:hover {background: #777777;}
+::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment {
+width:7px;height:7px;background:ghostwhite;} 
+* {
+    margin: none;
+    padding: none;
+}   
+body{
+    cursor: crosshair;
+    
+}
+html{
+    background-color: black;   
+}
+
+<!-------------------------------------------------------------------->
+.box {
+    background-color: black;
+    width: 1400px; 
+    height: 700px; 
+    z-index: 70;
+    position:fixed;
+    top:0px; 
+    left:0px;   
+}
+.language-ascii-art { 
+    display: inline-block; 
+    font-family: "Lucida Console", Monaco, monospace;
+    letter-spacing: 0.266em;
+    line-height: 1.29em;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    color: ghostwhite;
+    font-size: 0.5em;   
+}
+div.a, div.b, div.c, div.d{opacity: 0;}
+div.a:hover{opacity: 100;}
+div.b:hover{opacity: 100;}
+div.c:hover{opacity: 100;}
+div.d:hover{opacity: 100;}
+
+.gallery_box {
+    background-color: black;
+    width: 4500px; 
+    height: 700px; 
+    z-index: 0;
+    position:absolute;
+    top:0px; 
+    left:0px;  
+}
+.gallery-ascii-art { 
+    display: inline-block; 
+    font-family: "Lucida Console", Monaco, monospace;
+    letter-spacing: -1px;
+    line-height: 18px;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    color: ghostwhite;
+    font-size: 22px;   
+}
+
+.gallery_picture{
+    z-index: 10;
+}
+.gallery_picture_original{
+    z-index: 50;
+}
+
+::selection
+{
+color: white;
+background-color: #ff7473;
+}
+
+<!-------------------------------------------------------------------->
+
+.bigimg {
+    position: fixed;
+    top: 0px; 
+    left: 0px;
+    width: 400px; 
+    height: 400px;
+    z-index: 90;   
+}
+#flash1, #flash2, #flash3{
+    top:630px;
+    width: 70px; 
+    height: 70px;
+    position: absolute;
+    z-index: 10000;   
+}
+
+#flash1:hover{cursor: pointer;}
+#flash2:hover{cursor: pointer;}
+#flash3:hover{cursor: pointer;}
+
+.flash_text{
+    /*플래시 위 텍스트*/
+    position: absolute;
+    top:690px;
+    transform: translate(-50%, 0%);
+    left:50%;
+    width: 280px;   
+}
+.status{
+    /*설명텍스트*/
+    position: absolute;
+    width: 500px;
+    height: 100px;
+    top: 530px;
+    z-index: 100;   
+}
+.room{
+    /*ascii obj 가두는 div*/
+    position: absolute;
+    right: 0px;
+    width: 800px;
+    height: 2000px; 
+    z-index: 100;
+   }
+.pop1 {
+    /*popup obj 가두는 div*/
+    display:none;
+}
+    
+.aa {
+    /*ascii obj*/
+    position: absolute;
+    z-index: 1;
+}
+    
+.bb {
+    /*popup obj*/
+    width: 400px;
+    z-index: 1;
+}
+.view {
+    /*팝업창*/
+    position: fixed;
+    top:0px; 
+    left:0px;
+    width: 400px; 
+    height: 400px;
+    z-index: 90;    
+}
+
+<!-------------------------------------------------------------------->
+
+
+
+
+
+

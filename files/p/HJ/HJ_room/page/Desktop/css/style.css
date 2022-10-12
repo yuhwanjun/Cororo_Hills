@@ -1,0 +1,40 @@
+* {
+    overflow-y: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#top_div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#table_1 {
+    position: absolute;
+    left: 20px;
+    top: 70px;
+}
+
+.aaa {
+    font-size: 25px;
+    color: #fff;
+    font-family: "noto sans KR";
+    font-weight: 200;
+    text-align: center;
+}
+
+#back_icon {
+    position: fixed;
+    top: 2px;
+    left: 2px;
+    z-index: 30;
+}
+
+#back_icon:hover { 
+    cursor: pointer;
+}

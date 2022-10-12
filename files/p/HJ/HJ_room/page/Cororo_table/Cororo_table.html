@@ -1,0 +1,108 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Cororo Table</title>
+        <meta charset="utf-8" />
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        
+        <!-- link-->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- link-->
+    
+        <!-- font -->
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+        <!-- font -->
+        
+        <!-- script-->
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript">
+        
+        $(function(){
+            $('.aaa').mouseover(function(){
+                $( "#symbol_img" ).attr("src", "img/symbol_A.jpg");
+                $( ".aaa_text" ).css("display", "block");
+            });
+            
+            $('.aaa').mouseout(function(){
+                $( "#symbol_img" ).attr("src", "img/symbol_img.jpg");
+                $( ".aaa_text" ).css("display", "none");
+            });
+        });
+            
+        $(function(){
+            $('.bbb').mouseover(function(){
+                $( "#symbol_img" ).attr("src", "img/symbol_B.jpg");
+                $( ".bbb_text" ).css("display", "block");
+            });
+            
+            $('.bbb').mouseout(function(){
+                $( "#symbol_img" ).attr("src", "img/symbol_img.jpg");
+                $( ".bbb_text" ).css("display", "none");
+            });
+        });
+            
+//        $(function(){
+//            $('.bbb').mouseover(function(){
+//                $( "#symbol_img" ).attr("src", "img/symbol_B.jpg");
+//                $( ".bbb_text" ).css("display", "block");
+//            });
+//            
+//            $('.bbb').mouseout(function(){
+//                $( "#symbol_img" ).attr("src", "img/symbol_img.jpg");
+//                $( ".bbb_text" ).css("display", "none");
+//            });
+//        });
+            
+        $(function(){
+            $('.ccc').mouseover(function(){
+                $( "#symbol_img" ).attr("src", "img/symbol_C.jpg");
+                $( ".ccc_text" ).css("display", "block");
+            });
+            
+            $('.ccc').mouseout(function(){
+                $( "#symbol_img" ).attr("src", "img/symbol_img.jpg");
+                $( ".ccc_text" ).css("display", "none");
+            });
+        });
+            
+        </script>
+        <!-- script-->
+        
+    </head>
+    
+    <body>
+        
+        <a href="../../HJ_room.html"> <img id="back_icon" src="img/img_back.png" width="50px"> </a>
+        
+        <div id="top_div">
+            
+            <a href="../../../../JS/JS_room.html"><img class="point_img aaa" src="img/img.png"></a>
+            
+            <div class="aaa_text">
+                <p style="padding-bottom: 12px;">당근</p>
+                <p style="font-size: 18px; font-weight: 300; ">당근이당. <br><br><br><br> - 금재성</p>
+            </div>
+            
+            <a href="../../../../HS/private_room.html"><img class="point_img bbb" src="img/img.png"></a>
+            
+            <div class="bbb_text">
+                <p style="padding-bottom: 12px;">망원경</p>
+                <p style="font-size: 18px; font-weight: 300; ">여행가고싶다. <br><br><br><br> - 강희수</p>
+            </div>
+            
+            <a href="../../../../HY/HYroom,CororoGate/HY_room.html"> <img class="point_img ccc" src="img/img.png"></a>
+            
+            <div class="ccc_text">
+                <p style="padding-bottom: 12px;">유리구슬</p>
+                <p style="font-size: 18px; font-weight: 300; ">투명한<br>유리구슬처럼. <br><br><br> - 정학영</p>
+            </div>
+        </div>
+        
+        <img id="symbol_img" src="img/symbol_img.jpg" width="100%" height="100%">
+    
+    </body>
+    
+</html>

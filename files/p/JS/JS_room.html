@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>*jsng's room*</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="JS_room_style.css">
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        .bigimg {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 400px;
+            height: 400px;
+            z-index: 90;
+        }
+
+        #flash1,
+        #flash2,
+        #flash3 {
+            top: 630px;
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            z-index: 10000;
+        }
+
+        #flash1:hover {
+            cursor: pointer;
+        }
+
+        #flash2:hover {
+            cursor: pointer;
+        }
+
+        #flash3:hover {
+            cursor: pointer;
+        }
+
+        .flash_text {
+            /*플래시 위 텍스트*/
+            position: absolute;
+            top: 690px;
+            transform: translate(-50%, 0%);
+            left: 50%;
+            width: 280px;
+        }
+
+        .status {
+            /*설명텍스트*/
+            position: absolute;
+            width: 500px;
+            height: 100px;
+            top: 530px;
+            z-index: 100;
+        }
+
+        .room {
+            /*ascii obj 가두는 div*/
+            position: absolute;
+            right: 0px;
+            width: 800px;
+            height: 2000px;
+            z-index: 100;
+        }
+
+        .pop1 {
+            /*popup obj 가두는 div*/
+            display: none;
+        }
+
+        .aa {
+            /*ascii obj*/
+            position: absolute;
+            z-index: 1;
+        }
+
+        .invert:hover {
+            -webkit-filter: invert(.5);
+            filter: invert(.5);
+            -webkit-filter: blur(3px);
+            filter: blur(3px);
+        }
+
+        .bb {
+            /*popup obj*/
+            width: 400px;
+            z-index: 1;
+        }
+
+        .view {
+            /*팝업창*/
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 400px;
+            height: 400px;
+            z-index: 90;
+        }
+    </style>
+    <!-------마우스 따라라다니는 이미지-------->
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+    <script language="JavaScript">
+        // 마우스 커서 위치 담을 변수
+        var mouseX = 0;
+        var mouseY = 0;
+
+        function getMousePosition(e) {
+            var eObj = window.event ? window.event : e; // IE, FF 에 따라 이벤트 처리 하기
+            mouseX = eObj.clientX;
+            mouseY = eObj.clientY + document.documentElement.scrollTop; // 화면을 스크롤 했을때를 위한 처리 (스크롤 한 만큼 마우스 Y좌표에 + )
+            // documentElement 가 안된다면 body 바꿔야 한다. 크롬의 경우.. (자동파악 로직 필요)
+        }
+
+        function moveImg() {
+            // 이미지 위치 파악하기
+            var m_x = parseInt(document.getElementById('start').style.left.replace('px', ''));
+            var m_y = parseInt(document.getElementById('start').style.top.replace('px', ''));
+
+            // 이미지 움직이기
+            document.getElementById('start').style.left = Math.round(m_x + ((mouseX - m_x) - 250 / 1)) + 'px';
+            document.getElementById('start').style.top = Math.round(m_y + ((mouseY - m_y) - 230 / 1)) + 'px';
+
+            // 부드럽게 따라오는 공식 대략..
+            // 현재 이미지위치 = 현재이미지 위치 + (이미지 위치기준 마우스 커서 위치 / 적절한 나누기 값)
+            // 반복 처리 해주면 됩니다.
+
+            // ※ 이미지 위치 기준 마우스 커서 위치란?
+            // 이미지를 기준으로 그 이미지에서 커서가 얼마나 떨어져 있는지 여부
+        }
+
+        document.onmousemove = getMousePosition; // 마우스가 움직이면 getMousePosition 함수 실행
+        setInterval("moveImg()", 50); // moveImg 함수 반복 실행하여 이미지 움직이기
+    </script>
+    <script type="text/javascript">
+        function changeImage(a) {
+            document.getElementById("start", "big").src = a;
+        }
+    </script>
+
+    <!---------------팝업----------------->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(".room .aa").hover(function() {
+                $(this).append("<div class='view'></div>");
+                var num = $(this).index();
+                $(".pop1 .bb").eq(num).clone().appendTo(".view", this);
+            }, function() {
+                $(".view", this).remove();
+            });
+        });
+    </script>
+
+    <!--클릭시 없어짐-->
+    <script type="text/javascript">
+        $(function() {
+            $("#flash1").click(function() {
+                $(".clickA").css("display", "block");
+                $("#flash1").css("display", "none");
+            });
+            $("#flash2").click(function() {
+                $(".clickA").css("display", "block");
+                $("#flash2").css("display", "none");
+            });
+            $("#flash3").click(function() {
+                $(".clickA").css("display", "block");
+                $("#flash3").css("display", "none");
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $("#pill").dblclick(function() {
+                $("#background").css("filter", "blur(3px)");
+            })
+        });
+    </script>
+</head>
+
+<body>
+    
+<!--
+    <div style="position: absolute; left: 550px;">
+        <a href="#" style="position: absolute; width: 70px; height: 50px; top: 750px; left: 550px; background-color: rgba(0, 255, 255, 0.31); z-index: 200;"></a>
+        
+        <a href="#" style="position: absolute; width: 50px; height: 50px; top: 780px; left: 200px; z-index: 200;"></a>
+    
+    </div>
+-->
+
+    <img id="start" style="position:absolute; left:0; top:0; z-index:90;width: 500px;height: 500px;" src="img/jsroom/start.png">
+
+    <!--left side-->
+    <div class="bigimg">
+        <a href="JS_index.html">
+            <div><img style="position: absolute; top:0px; left: 500px; top:100px; width: 40px; z-index: 70;" src="img/door.png"></div>
+        </a>
+
+        <!--popup image link-->
+        <div class="pop1">
+            <!--room1_obj popup image link-->
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/keyboard.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/marble.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/binoculars.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/cd.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/macbook.gif"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/cup.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/cactus.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/glass.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/nintendo.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/camera.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/map.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/money.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/duck.png"></div>
+
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/classicghost.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/8bitboo.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/8bitshyboo.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/kingboo.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/trappedghost.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/vulnerableghost.png"></div>
+            <div class="bb"><img style="width: 400px;" src="img/jsroom/big/blinky.png"></div>
+            <!--room2_obj popup image link-->
+
+            <!--room3_obj popup image link-->
+        </div>
+
+        <!--flash imge link-->
+        <div id="big" src="img/jsroom/start.png"></div>
+        <div class="clickA" id="flash1" style="left:35%; transform: translate(-50%, 0%);" onclick='changeImage("img/jsroom/light1.png");'>
+            <img src="img/jsroom/flash_icon1.png" style="width: 70px;"></div>
+        <div class="clickA" id="flash2" style="left:50%; transform: translate(-50%, 0%);" onclick='changeImage("img/jsroom/light2.png");'>
+            <img src="img/jsroom/flash_icon2.png" style="width: 70px;"></div>
+        <div class="clickA" id="flash3" style="left:65%; transform: translate(-50%, 0%);" onclick='changeImage("img/jsroom/light3.png");'>
+            <img src="img/jsroom/flash_icon3.png" style="width: 70px;"></div>
+
+        <div><img style="position: absolute; top:0px; left: 0px; width: 600px; z-index: 0;" src="img/jsroom/background_left.png"></div>
+
+    </div>
+
+    <!--right side-->
+    <div class="room">
+        <a href="../HJ/HJ_room/HJ_room.html"><div class="aa" style="top: 1500px; left: 300px;">
+            <img class="invert" style="width:120px;" src="img/jsroom/room1_obj/0_1_keyboard.png"></div></a>
+
+        <a href="../HY/HYroom,CororoGate/HY_room.html"><div class="aa" style="top: 1000px; left: 550px;">
+            <img class="invert" style="width:70px;" src="img/jsroom/room1_obj/0_2_marble.png"></div></a>
+
+        <a href="../HS/private_room.html"><div class="aa" style="top: 750px; left: 500px;">
+            <img class="invert" style="width:70px;" src="img/jsroom/room1_obj/0_3_binoculars.png"></div></a>
+
+       <a href="../KB/kb_room/main01.html"> <div class="aa" style="top: 780px; left: 150px;">
+           <img class="invert" style="width:50px;" src="img/jsroom/room1_obj/0_4_cd.png"></div></a>
+
+        <div class="aa" style="top: 1650px; left: 60px;">
+            <img class="invert" style="width:100px;" src="img/jsroom/room1_obj/1_macbook.png"></div>
+
+        <div class="aa" style="top: 450px; left: 550px;">
+            <img class="invert" style="width:50px;" src="img/jsroom/room1_obj/2_mug.png"></div>
+
+        <div class="aa" style="top: 300px; left: 200px;">
+            <img class="invert" style="width:40px;" src="img/jsroom/room1_obj/3_cactus.png"></div>
+
+        <div class="aa" style="top: 1500px; left: 100px;">
+            <img class="invert" style="width:50px;" src="img/jsroom/room1_obj/4_glass.png"></div>
+
+        <div class="aa" style="top: 1200px; left: 150px;">
+            <img class="invert" style="width:130px;" src="img/jsroom/room1_obj/5_nintendo.png"></div>
+
+        <div class="aa" style="top: 1300px; left: 600px;">
+            <img class="invert" style="width:100px;" src="img/jsroom/room1_obj/6_camera.png"></div>
+
+        <div class="aa" style="top: 80px; left: 450px;">
+            <img class="invert" style="width:80px;" src="img/jsroom/room1_obj/7_map.png"></div>
+
+        <div class="aa" style="top: 1800px; left: 500px;">
+            <img class="invert" style="width:100px;" src="img/jsroom/room1_obj/8_money.png"></div>
+
+        <div class="aa" style="top: 600px; left: 200px;">
+            <img class="invert" style="width:110px;" src="img/jsroom/room1_obj/9_ducks.png"></div>
+
+        <div class="aa" style="top: 900px; left: 100px; width: 60px; height: 60px;"></div>
+
+        <div class="aa" style="top: 1000px; left: 400px; width: 60px; height: 60px;"></div>
+
+        <div class="aa" style="top: 1200px; left: 700px; width: 60px; height: 60px;"></div>
+
+        <div class="aa" style="top: 1700px; left: 300px; width: 60px; height: 60px;"></div>
+
+        <div class="aa" style="top: 350px; left: 750px; width: 60px; height: 60px;"></div>
+
+        <div class="aa" style="top: 1900px; left: 300px; width: 60px; height: 60px;"></div>
+
+        <div class="aa" style="top: 100px; left: 200px; width: 60px; height: 60px;"></div>
+
+
+        <div id="pill" style="z-index: 1000; position: absolute; top: 485px; left: 410px; width: 30px; height: 30px;"></div>
+
+
+
+
+
+
+        <div><img id="background" style="position: absolute; top:0px; left: 0px; width: 800px; z-index: 0;" src="img/jsroom/background_right.png"></div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>guest book</title>
+        <meta charset="utf-8" />
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        
+        <!-- link-->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="#">
+        <!-- link-->
+    
+        <!-- font -->
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+        <!-- font -->
+        
+        <!-- script-->
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript"></script>
+        <!-- script-->
+        
+        <style>
+        
+            body{
+                margin: 50px;
+                background-color: black;
+                overflow: hidden;
+            }
+            
+            #aaa {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                overflow: hidden;
+                z-index: 5;
+                opacity: 1;
+            }
+            
+            #bg {
+                background-image: url(img/cororo_hills.png);
+                background-repeat: no-repeat;
+                width: 1400px;
+                height: 700px;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+            }
+            
+            #black_box {
+                width: 20px;
+                height: 700px;
+                position: fixed;
+                z-index: 15;
+                right: 0;
+                top: 0;
+                background-color: black;
+            }
+            
+            #back {
+                position: fixed;
+                z-index: 30;
+            }
+            
+            .top{
+                left: 0;
+                top: 0;
+                width: 1400px;
+                height: 50px;
+            }
+            
+            .bottom{
+                left: 0;
+                bottom: 0;
+                width: 1400px;
+                height: 50px;
+            }
+            
+            .left{
+                left: 0;
+                bottom: 0;
+                width: 370px;
+                height: 700px;
+            }
+            
+            .right{
+                right: 0;
+                bottom: 0;
+                width: 387px;
+                height: 700px;
+            }
+        
+        </style>
+    </head>
+    
+    <body>
+        <div id="bg"></div>
+        <iframe id="aaa" src="https://docs.google.com/forms/d/e/1FAIpQLSeXgDPHRSs7wOKgIOhB7rgdeg3FSJqTz3VSOobCbfAUilY2-A/viewform?embedded=true" width="1400" height="600" frameborder="0" marginheight="" marginwidth="">로드 중…</iframe>
+        <div id="black_box"></div>
+        <a id="back" class="top" href="../cororohills_v1.html"></a>
+        <a id="back" class="bottom" href="../cororohills_v1.html"></a>
+        <a id="back" class="left" href="../cororohills_v1.html"></a>
+        <a id="back" class="right" href="../cororohills_v1.html"></a>
+    </body>
+    
+</html>

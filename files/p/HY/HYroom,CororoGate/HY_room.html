@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HY_room</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.switch').click(function() {
+                $(".off").toggle();
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<style>
+    html {
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: black;
+        background-size: 1400px, 700px;
+    }
+
+    .switch {
+        width: 70px;
+        height: 70px;
+        z-index: 2;
+        position: fixed;
+        left: 670px;
+        top: 480px;
+        opacity: 0;
+    }
+
+    .dd {
+        width: 70px;
+        height: 70px;
+        z-index: 2;
+        position: fixed;
+        left: 670px;
+        top: 480px;
+        opacity: 100;
+    }
+    
+    .exit {
+        width: 110px;
+        height: 220px;
+        position: fixed;
+        z-index: 1200;
+        left: 560px;
+        top: 100px;
+    }
+</style>
+
+<body>
+    <center>
+
+        <form>
+            <input class="switch" type="button" name="switch" style="cursor: pointer">
+
+        </form>
+
+
+        <div style="background-image: url(CororoHills_cImage/Myroom_Lighton.jpg); width: 1400px; height: 700px; background-position: center; z-index: 2;">
+            <div class="off" style="background-image: url(CororoHills_cImage/Myroom_Lightoff.jpg); width: 1400px; height: 700px; background-position: center; z-index: 1;">
+
+            </div>
+            
+            <a class="exit" href="../../../All/cororohills_v1.html"></a>
+        </div>
+
+
+
+
+
+
+    </center>
+
+
+
+    <!--
+        <div style="z-index: 2; position: fixed; left: 680px; top: 120px;">
+            <img src="CororoHills_cImage/dot.gif" width="30px;" height="30px;" id="dot1">
+            </div>
+        
+        <div style="z-index: 2; position: absolute; left: 500px; top:370px; ">
+            <img src="CororoHills_cImage/dot.gif" width="30px;" height="30px;" id="dot2">
+            </div>
+        
+        <div style="z-index: 2; position: absolute; left: 920px; top: 230px;">
+            <img src="CororoHills_cImage/dot.gif" width="30px;" height="30px;" id="dot3">
+            </div>
+        
+        <div style="z-index: 2; position: absolute; left: 850px; top: 370px;">
+            <img src="CororoHills_cImage/dot.gif" width="30px;" height="30px;" id="dot4">
+        </div>
+            
+            <div style="z-index: 2; position: absolute; left: 1040px; top: 300px;">
+            <img src="CororoHills_cImage/dot.gif" width="30px;" height="30px;" id="dot5">
+            </div>
+        -->
+
+</body>
+
+
+
+
+</html>
